@@ -1,0 +1,22 @@
+location            = "eastus"
+subscription_id     = "<<your subscription>>" # az account show --query id -o tsv
+resource_group_name = "rg-vllm-aks"
+cluster_name        = "aks-vllm"
+node_count          = 2
+node_vm_size        = "Standard_D4s_v5"
+user_node_count     = 1
+user_node_vm_size   = "Standard_D4s_v5"
+dockerhub_username  = "mightydevs"
+image_name          = "qwen-vllm-cpu"
+image_tag           = "1.0.1-amd64"
+container_port      = 8000
+replica_count       = 1
+
+vnet_address_space  = ["10.10.0.0/16"]
+aks_subnet_prefix   = ["10.10.1.0/24"]
+appgw_subnet_prefix = ["10.10.2.0/24"]
+appgw_sku_name      = "Standard_v2"
+appgw_sku_tier      = "Standard_v2"
+appgw_capacity      = 1
+appgw_dns_label     = "vllm-qwen-demo" # must be globally unique within the region
+enable_tls          = false

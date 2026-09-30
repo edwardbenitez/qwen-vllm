@@ -1,0 +1,9 @@
+.git
+.gitignore
+.dockerignore
+.DS_Store
+.venv
+__pycache__
+*.py[cod]
+.pytest_cache
+models/*/.cache
